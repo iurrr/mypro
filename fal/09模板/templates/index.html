@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>用户名：{{  user|upper  }}</p>
+    <p>书籍列表：{{  books  }}</p>
+    <p>1：{{  books.0  }}</p>    
+    <p>1：{{  books.1  }}</p>
+    <p>2：{{  books.2  }}</p>
+    <p>3：{{  books.3  }}</p>
+    <p>4：{{  books.4  }}</p>
+    <ul>
+        <li>{{  books[0] }}</li>
+        <li>{{  books[1] }}</li>    
+        <li>{{  books[2] }}</li>    
+    </ul>
+
+    <p>姓名：{{  info.name  }}</p>
+    <p>年龄：{{  info.age  }}</p>
+    <p>圆周率：{{  pi|round(2)  }}</p>
+
+<p>影视区</p>
+
+{% if info.age >= 18 %}
+
+<ul>
+{% for movie in movies.cn %}
+    <li>{{ movie }}</li>
+{% endfor %}
+</ul>
+
+{% else %}
+
+<ul>
+{% for movie in movies.wcn %}
+    <li>{{ movie }}</li>
+{% endfor %}
+</ul>
+
+{% endif %}
+
+<hr>
+    <ul>
+        {% for book in books %}
+        {% if book.price > 100 %}
+        <li>{{ book.title }} </li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+
+
+</body>
+</html>
