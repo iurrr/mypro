@@ -1,0 +1,2 @@
+这是一个简单学习fastapi的小项目
+内容包括api的构建、一些starlette和pydantic的相关组件的使用、以及一些简单的前端渲染工作。
